@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <mate charest="utf-8" />
+    <title>Quotation</title>
+    <link href='https://fonts.googleapis.com/css?family=Oleo Script Swash Caps' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Blaka Hollow' rel='stylesheet'>
+</head>
+<style>
+    table,
+    th,
+    td {
+        border: 5px solid #cc9d7d !important;
+        border-collapse: collapse;
+        /* font-size: 10px; */
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    table,
+    tr,
+    td,
+    th,
+    tbody,
+    thead,
+    tfoot {
+        page-break-inside: avoid !important;
+    }
+</style>
+
+<body style='color:#cc9d7d;margin:35px;background-image:
+     url("data:image/png;base64,{{background}}"); 
+     background-size:contain;
+     background-repeat: repeat-y; 
+     font-family: Oleo Script Swash Caps'>
+    <!-- style='margin:35px;background-image: url("data:image/png;base64,{{background}}"); background-size: contain;background-repeat: repeat-y;'> -->
+    <div style="margin-top: 100px;">
+        <center>
+            <img src="data:image/png;base64,{{logoWithRing}}" width="50%" />
+            <h1 style="margin-top: 100px; margin-bottom:230px">{{title}}</h1>
+        </center>
+        <h1 style="float:right ;margin-bottom:40px">{{createdAt}}</h1>
+
+    </div>
+
+    <div style="clear: both ; ">
+    </div>
+    <div style="page-break-after: always">
+        <center>
+            <h1 style="margin-top: 250px;">
+                <span style="font-size: 60px!important;font-family: Blaka Hollow"> Namaste</span>
+            </h1>
+            <p style="text-align: justify;font-size:20px; margin-left: 40px; margin-right: 40px;">
+
+                How many days and nights do we dream about the ideal wedding day? The day
+                you want to relive with the same adrenaline rush you felt on "The Auspicious
+                Day"! While "the wedding day" may only be one day, we understand that you've
+                put a lot of thought and care into making it perfect in every way. But how do you
+                relive the day with the same sense of anticipation? Choosing the best candidate for
+                the job! That's where we can help! We will assist you in capturing beautiful
+                memories!
+            </p>
+        </center>
+    </div>
+
+    <div style="page-break-after: always">
+        <center>
+            <h1 style="margin-top: 50px;">
+                <span style="font-size: 60px!important;font-family: Blaka Hollow"> The Shots: We Capture</span>
+            </h1>
+            <p style="text-align: justify;font-size:20px; margin-left: 40px; margin-right: 40px;">
+                We have our authentic pattern of working. We will be doing our traditional photography in the main
+                Events and along with this our talented photographers will capture some original unplanned moments
+                Without you noticing it. The rest of the time, we will be invisible, just wandering around, capturing
+                Organic shots of conversations, laughing and abstractions. Bottom line: you'll end up with the purposed
+                Photographs as well as the interesting and more fun to watch one's.
+            </p>
+            <img src="data:image/png;base64,{{imgIntro}}" width="90%" style="margin-top: 20px;" />
+
+        </center>
+    </div>
+
+    <div>
+        <center>
+            <h1 style="margin-top: 50px;">
+                <span style="font-size: 50px!important;font-family: Blaka Hollow">Event field Work</span>
+            </h1>
+
+            {{#each eventDetails}}
+            {{#if this.isNewPage}}
+            <div style="margin-top: 50px;">
+                {{/if}}
+                <center>
+                    <table style="width:90%;
+                    font-size: 15px!important;  
+                    border:5px solid #cc9d7d !important; 
+                    border-radius:10px !important; 
+                    margin-top: 30px;
+                    ">
+                        <tr>
+                            <td>Date</td>
+                            <td style="text-transform: lowercase;">{{this.eventDateTime}}</td>
+                        </tr>
+                        <tr>
+                            <td>Event Description</td>
+                            <td style="text-transform: lowercase;">{{this.eventDescription}}</td>
+                        </tr>
+                        <tr>
+                            <td>Venue</td>
+                            <td style="text-transform: lowercase;">{{this.eventPlace}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding: 25px; text-transform: lowercase;">
+                                <center>
+                                    {{#each this.photographerTypes}}
+                                    {{this.photographerType}} - {{this.requiredPhotographers}},
+                                    {{/each}}
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </div>
+
+            {{#if this.isPageBreak}}
+            <div style="page-break-after: always">
+            </div>
+            {{/if}}
+            {{/each}}
+        </center>
+    </div>
+
+    <div style="page-break-before: always">
+    </div>
+    <div>
+        <center>
+            <h1 style="margin-top: 50px;">
+                <span style="font-size: 50px!important;font-family: Blaka Hollow">Post Production And
+                    Printing</span>
+            </h1>
+
+
+            <table
+                style="width:90%;font-size: 15px!important;  border:5px solid #cc9d7d !important; border-radius:10px !important;">
+                <tr>
+                    <td>Services</td>
+                    <td>Estimated Delivery time</td>
+                </tr>
+                {{#each services}}
+                <tr>
+                    <td style="text-transform: lowercase;">{{this.serviceName.serviceName}}</td>
+                    <td style="text-transform: lowercase;">{{this.deliveryTime}}</td>
+                </tr>
+                {{/each}}
+                <tr>
+                    <td colspan="2" style="padding: 25px;">
+                        <center> Complimentary Services
+                        </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding: 25px;text-transform: lowercase;">
+                        <center> {{this.complimentaryService}}
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+
+    <div style="page-break-before: always">
+    </div>
+    <div style="page-break-after: always">
+
+        <center>
+            <h1 style="margin-top: 50px;">
+                <span style="font-size: 50px!important;font-family: Blaka Hollow">Estimate- Payment Plan</span>
+            </h1>
+
+            <table
+                style="width:90%;font-size: 15px!important;  border:5px solid #cc9d7d !important; border-radius:10px !important;">
+
+                {{#each paymentPlan}}
+                <tr>
+                    <td>{{this.phaseName}}</td>
+                    <td>{{this.amount}}</td>
+                </tr>
+                {{/each}}
+                <tr>
+                    <td colspan="2" style="padding: 25px;">
+                        <center> Total: {{amountWithDiscount}} ({{finalAmount}} - {{discount}})
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+    <div style="page-break-after: always">
+        <center>
+            <h1 style="margin-top: 20px;margin-bottom: 10px;">
+                <span style="font-size: 50px!important;font-family: Blaka Hollow">Terms & Conditions</span>
+            </h1>
+
+
+            <table
+                style="margin-top: 0px;width:95%;font-size: 12px!important;  border:5px solid #cc9d7d !important; border-radius:10px !important;">
+                <tr>
+
+                    <td style="font-family: Blaka Hollow">
+                        <center>
+                            <span style="font-size:20px;font-family: Blaka Hollow">Payment Process</span>
+                        </center>
+                    </td>
+
+                </tr>
+                <tr style="text-align:left !important;">
+                    <td>
+                        <ol style="margin-top:0px;margin-bottom:0px">
+                            <li>
+                                All our services are pre-paid.
+                            </li>
+                            <li>
+                                We accept payment in 2 or 3 instalments only
+                            </li>
+                            <li>
+                                The above packages booked are non-refundable in any circumstances.
+                            </li>
+                            <li>
+                                Sessions like pre-wedding, family prewedding or any other pre-wedding sessions needs be
+                                Paid
+                                In
+                                100%
+                                Advance.
+                            </li>
+                            <li>
+                                Team will not start post production unless 2nd instalment is completed. 6) data would
+                                Only be
+                                Handed
+                                Over against full invoice payment only.
+                            </li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family: Blaka Hollow">
+                        <center>
+                            <span style="font-size:20px;font-family: Blaka Hollow">General Terms</span>
+                        </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ol style="margin-top:0px;margin-bottom:0px">
+                            <li>
+                                All work undertaken by iconic films will be delivered to the client via a detailed
+                                Invoice
+
+                                At the time of booking.
+                            </li>
+                            <li>
+                                The client is obligated to ensure that this, along with the full terms and
+                                Conditions, is thoroughly read and understood prior to booking. Any amendments or
+                                Additional coverage apart from the agreed ones lead to an additional charge which will
+                                Be invoiced to the client.
+                            </li>
+                            <li>
+                                The client hereby allows company to display any photograph or video covered by this
+                                Contract to generally promote the business, if the client don't want their content to be
+                                Displayed to any media platform than they need to pay additional royalty of data as per
+                                Updated terms of the company.
+                            </li>
+                            <li>
+                                Iconic films will not held liable for any production problems beyond our control,
+                                Such as weather accidents, poor acoustics/lighting, interference from guests,
+                                Excessively noisy locations, wind noise etc.
+                            </li>
+                            <li>
+                                The entire copyright of the photographs/films is retained by iconic films at all
+                                Times throughout the world. The photographs may be printed, and photographs/films can be
+                                Displayed online, for personal or commercial use.
+                            </li>
+                            <li>
+                                If data/footage is lost or corrupted due to equipment damage, loss or theft, every
+                                Effort will be made to recover/reconstruct the data, but iconic films cannot be held
+                                Responsible for anything which cannot be recovered.
+                            </li>
+                            <li>
+                                If our equipment is damaged at the event by the client or their client will be liable
+                                For the full cost of repair/replacement.
+                            </li>
+                            <li>
+                                Anything additional to the services and deliverables included in the contract would have
+                                Additional cost.
+                            </li>
+                            <li>
+                                Express delivery cost 50,000/- (within 20 days)*
+
+                            </li>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+    <div>
+        <div style="margin-top: 30px;">
+            <center>
+                <table style="width:95%;font-size: 12px!important;
+                        border:5px solid #cc9d7d !important;
+                        border-radius:10px !important;">
+                    <tr style="text-align:left !important ;">
+                        <td>
+                            <ol style="margin-top:0px;margin-bottom:0px">
+                                <li>
+                                    Travel food and accommodation during the wedding events as well. As pre-wedding has
+                                    To be arranged by the client and in case of any discrepancies, same will be billed
+                                    On
+                                    The actuals.
+                                </li>
+                                <li>
+                                    Team will require a detailed schedule of the entire event and sub events least one
+                                </li>
+                                <li>
+                                    Month prior to the event.
+                                </li>
+                                <li>
+                                    One/two room is to be provided at the wedding venue and for
+                                    The team at the same or
+
+                                    Nearby venue.
+                                </li>
+                                <li>
+                                    Its our sincere request that all the team members shall be accommodated
+                                    In the same venue and also
+
+                                    Provide meals at the venue itself.
+                                </li>
+                                <li>
+                                    It is the clients responsibility to ensure that
+                                    Iconic films has clear access to all relevant locations required
+
+                                    Throughout the event. Any restriction for photographing/filming must be mentioned in
+                                    Advance. Team held responsible for restrictions of their filming. While will always
+                                    Make
+                                    Every effort, they
+
+                                    Have all of the shots/footage/audio required in every situation.
+                                </li>
+                                <li>
+                                    We are not accountable for any delays due to unavailability of local transportation
+                                    Or cancellation of flights.
+                                </li>
+                                <li>
+                                    Iconic films will not be held liable if the interviews/couple shoots/portraits are
+                                    Not taken due to reluctance of the closed ones, running behind the schedules,
+                                    Non-cooperation of the makeup artist or any other vendors
+                                </li>
+                                <li>
+                                    Iconic films shall be excused from their obligations here under in the event of
+                                    Proven natural calamities medical emergency or any other legitimate condition or
+                                    Occurrence
+
+                                    Beyond their respective control. However, we will every effort to ensure a backup is
+                                    Present.
+                                </li>
+                                <li>
+                                    In case of same day edits all the arrangements of screen/led, power supply, and
+                                    Sound
+                                    Has to be
+
+                                    Provided by client/event manager. We will only provide with the video.
+                                </li>
+                                <li>
+                                    Team will
+                                    Travel in their pre-booked car for their safety and comfort. Company will assist
+                                    With
+
+                                    Booking of rental
+
+                                    Cars. (amount of rental cars must be paid in advance.) travel(outside 40 kms range
+                                    From
+                                    Iconic films headquarters), food & accommodation will be provided
+                                </li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr style="text-transform: capitalize !important;">
+                        <td>
+                            <center>
+                                <span style="font-size:20px;font-family: Blaka Hollow">Deliverables & Corrections</span>
+                            </center>
+                        </td>
+                    </tr>
+                    <tr style="text-align:left !important ;">
+                        <td>
+                            <ol style="margin-top:0px;margin-bottom:5px">
+                                <li>
+                                    A master copy of the final deliverables will be kept for 12 months from the delivery
+                                    Date.
+                                </li>
+                                <li>
+                                    If the client wish to order additional copies for themselves (due to data loss
+                                    Or any unforeseeable circumstances), a fee would be charged for the same.
+                                </li>
+                                <li>
+                                    After one year iconic films cannot guarantee that the master copy will be available.
+                                </li>
+                                <li>
+                                    Corrections conditions beyond our control can't be manipulated through editing. Only
+                                    Possible changes will be done.
+                                </li>
+                                <li>
+                                    No changes will be accepted beyond 2 rounds (additional editing charges will be
+                                    Imposed if needed to be).
+                                </li>
+                                <li>
+                                    Trailer & wedding film: the song selection will be provided from our end and we
+                                    Suggest you to go with the editors' preference for a better output. If client have
+                                    Any
+                                    Song suggestions please provide them in advance.
+                                </li>
+                            </ol>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+
+    </div>
+</body>
+
+</html>
