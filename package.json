@@ -1,0 +1,28 @@
+{
+  "name": "photography_studio",
+  "version": "1.0.0",
+  "description": "backend of photography studio project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js"
+  },
+  "author": "Parth Gandhi",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "express-jwt": "^7.6.2",
+    "express-validator": "^6.14.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.3",
+    "mongoose": "^6.3.1",
+    "mongoose-aggregate-paginate-v2": "^1.0.6",
+    "nodemailer": "^6.7.7",
+    "nodemon": "^2.0.15",
+    "pdf-creator-node": "^2.3.4"
+  }
+}
